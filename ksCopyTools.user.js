@@ -2,10 +2,10 @@
 // @name         kscoopyTools
 // @name:zh      快手工具 chazz
 // @namespace     https://github.com/chazz1/kscoopyTools
-// @version      0.1
+// @version      0.2
 // @description  快手辅助工具
 // @author       chazz <chazzcfb@163.com>
-// @match        *://sycm.taobao.com/*
+// @match        *://www.baidu.com/*
 // @require      https://cdn.bootcdn.net/ajax/libs/jquery/3.2.1/jquery.min.js
 // @require      https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.6/clipboard.min.js
 // @grant        none
@@ -15,7 +15,7 @@
     'use strict';
     $(document).ready(function(){
 
-        $("body").append('<div style="position: fixed;min-width: 100px;z-index: 9999999999;padding: 10px;bottom: 500px;right: 25px;" id="ch-box"><button style="color:#fff;width:100px;line-height:50px;background: #5C53E6;font-size:18px;" id="ch-bang" value=0>提取数据</button></div>');
+        $("body").append('<div style="position: fixed;min-width: 100px;z-index: 9999999999;padding: 10px;bottom: 500px;right: 25px;" id="ch-box"><button style="color:#fff;width:100px;line-height: 40px;background-color:red;font-size:18px;border: 1px;" id="ch-bang" value=0>提取数据</button></div>');
 
 
         $("#ch-bang").click(function() {
@@ -30,9 +30,9 @@
 
                 var txts =orderNo + "\t" +userInfo[0] + "\t"+userInfo[2] + "\t"+  expressCompany+ "\t"+expressNo;
                 console.log(txts);
-                $("#ch-bang").attr("data-clipboard-text", txts).text("复制数据").val(1);
+                $("#ch-bang").attr("data-clipboard-text", txts).css("background-color","Coral").text("复制数据").val(1);
             }else{
-                $("#ch-bang").text("提取数据").val(0);
+                $("#ch-bang").text("提取数据").css("background-color","red").val(0);
             }
 
             copy();
