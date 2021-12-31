@@ -2,10 +2,10 @@
 // @name         ksCopyTools
 // @name:zh      快手工具 chazz
 // @namespace    https://gitee.com/chazzcfb/kscopyTools
-// @version      0.4
+// @version      0.5
 // @description  快手辅助工具
 // @author       chazz <chazzcfb@163.com>
-// @match        *://s.kwaixiaodian.com/*
+// @include        *://s.kwaixiaodian.com/*
 // @require      https://cdn.bootcdn.net/ajax/libs/jquery/3.2.1/jquery.min.js
 // @require      https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.6/clipboard.min.js
 // @grant        none
@@ -14,12 +14,8 @@
 (function () {
     'use strict';
 
-    var pathname = window.location.pathname; //获取页面地址
-    if (pathname == "/") {
-        pathname = window.location.hash;
-    }
+   
     $(document).ready(function () {
-        if(pathname.indexOf("order/detail?") != -1){
 
         $("body").append('<div style="position: fixed;min-width: 100px;z-index: 9999999999;padding: 10px;bottom: 500px;right: 25px;" id="ch-box"><button style="color:#fff;width:100px;line-height: 40px;background-color:red;font-size:18px;border: 1px;" id="ch-bang" value=0>提取数据</button></div>');
 
@@ -43,7 +39,6 @@
 
             copy();
         });
-    }
 
     });
 
