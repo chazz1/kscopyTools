@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         kscoopyTools
+// @name         ksCopyTools
 // @name:zh      快手工具 chazz
-// @namespace     https://github.com/chazz1/kscoopyTools
+// @namespace    https://github.com/chazz1/kscopyTools
 // @version      0.2
 // @description  快手辅助工具
 // @author       chazz <chazzcfb@163.com>
