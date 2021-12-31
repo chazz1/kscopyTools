@@ -2,7 +2,7 @@
 // @name         ksCopyTools
 // @name:zh      快手工具 chazz
 // @namespace    https://gitee.com/chazzcfb/kscopyTools
-// @version      0.2
+// @version      0.3
 // @description  快手辅助工具
 // @author       chazz <chazzcfb@163.com>
 // @match        *://www.baidu.com/*
