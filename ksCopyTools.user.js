@@ -2,10 +2,10 @@
 // @name         ksCopyTools
 // @name:zh      快手工具 chazz
 // @namespace    https://gitee.com/chazzcfb/kscopyTools
-// @version      0.3
+// @version      0.4
 // @description  快手辅助工具
 // @author       chazz <chazzcfb@163.com>
-// @match        *://s.kwaixiaodian.com/zone-origin/order/detail?id=*
+// @match        *://s.kwaixiaodian.com/*
 // @require      https://cdn.bootcdn.net/ajax/libs/jquery/3.2.1/jquery.min.js
 // @require      https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.6/clipboard.min.js
 // @grant        none
@@ -13,15 +13,20 @@
 
 (function () {
     'use strict';
+
+    var pathname = window.location.pathname; //获取页面地址
+    if (pathname == "/") {
+        pathname = window.location.hash;
+    }
     $(document).ready(function () {
+        if(pathname.indexOf("order/detail?") != -1){
 
         $("body").append('<div style="position: fixed;min-width: 100px;z-index: 9999999999;padding: 10px;bottom: 500px;right: 25px;" id="ch-box"><button style="color:#fff;width:100px;line-height: 40px;background-color:red;font-size:18px;border: 1px;" id="ch-bang" value=0>提取数据</button></div>');
 
-
+    
         $("#ch-bang").click(function () {
             var btnval = $("#ch-bang").val();//获取按钮状态0位提取数据，1为复制数据
-            if (btnval === 0)
-            {
+            if (btnval == 0) {
                 //提取数据，然后点复制按钮
                 var obj = $("span.ant-descriptions-item-content");
                 var expressNo = $(".express-no").text();
@@ -38,8 +43,10 @@
 
             copy();
         });
+    }
 
     });
+
     //去除字符两边的空白字符
 
     function trim(s) {
