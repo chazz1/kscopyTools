@@ -2,10 +2,10 @@
 // @name         ksCopyTools
 // @name:zh      快手工具 chazz
 // @namespace    https://gitee.com/chazzcfb/kscopyTools
-// @version      0.2
+// @version      0.3
 // @description  快手辅助工具
 // @author       chazz <chazzcfb@163.com>
-// @match        *://s.kwaixiaodian.com/zone-origin/order/detail*
+// @match        *://s.kwaixiaodian.com/zone-origin/order/detail?id=*
 // @require      https://cdn.bootcdn.net/ajax/libs/jquery/3.2.1/jquery.min.js
 // @require      https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.6/clipboard.min.js
 // @grant        none
@@ -20,7 +20,8 @@
 
         $("#ch-bang").click(function () {
             var btnval = $("#ch-bang").val();//获取按钮状态0位提取数据，1为复制数据
-            if (btnval == 0) {
+            if (btnval === 0)
+            {
                 //提取数据，然后点复制按钮
                 var obj = $("span.ant-descriptions-item-content");
                 var expressNo = $(".express-no").text();
@@ -36,7 +37,7 @@
             }
 
             copy();
-        })
+        });
 
     });
     //去除字符两边的空白字符
